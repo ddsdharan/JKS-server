@@ -25,7 +25,7 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 app.post('/api/submitFormData', (req, res) => {
     const { fullName, email, mobile} = req.body;
 
-    if (!fullName || !email || !mobile) {
+    if (!fullName || !email) {
         return res.status(400).json({ error: 'Kindly provide all the required details!' });
     }
 
